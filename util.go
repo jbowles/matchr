@@ -74,16 +74,20 @@ func round(x float64, prec int) float64 {
 	return rounder / pow * sign
 }
 
+/*
+ IAM NOT BEING USED??
 // A fault-tolerant version of At. It will return nothing (0) if the index is
 // out of bounds. This helps to index characters without having to bound check
 // everywhere.
 func charAt(value *String, index int) rune {
 	if index < 0 || index >= value.RuneCount() {
-		return 0
+		//need to return -1 instead of 0, go has null chars so out of bound index can be confused here
+		return -1
 	} else {
 		return rune(value.At(index))
 	}
 }
+*/
 
 // A helper to determine if any substrings exist within the given string
 func contains(value *String, start int, length int, criteria ...string) bool {
